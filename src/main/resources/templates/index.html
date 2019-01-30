@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>Title</title>
+
+    <link rel="stylesheet" href="../static/js/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/js/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+</head>
+<body>
+    <div class="title" >
+        <div class="row">
+            <div class="col-xs-4">1</div>
+            <div class="col-xs-4">2</div>
+            <div class="col-xs-4">3</div>
+        </div>
+    </div>
+
+    <div class="bodyPart">
+        <!--tableAll-->
+        <div><h1>Jerry的课程成绩</h1></div>
+
+        <div class="divBorder" >
+            <div  class="tableLeft">
+              <!--  <table class="table table-condensed">-->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>名称</th>
+                        </tr>
+                    </thead>
+                  <tbody>
+                      <tr>
+                          <td>第一次模拟考</td>
+                      </tr>
+                      <tr>
+                          <td>第二次模拟考</td>
+                      </tr>
+                  </tbody>
+                </table>
+            </div>
+            <div class="tableRigth">
+              <!--  <table class="table table-condensed">-->
+                <table class="grid">
+                    <thead>
+                    <tr>
+                        <th>语文</th>
+                        <th>数学</th>
+                        <th>英语</th>
+                        <th>物理</th>
+                        <th>化学</th>
+                        <th>生物</th>
+                        <th>地理</th>
+                        <th>政治</th>
+                        <th>历史</th>
+                        <th>总分</th>
+                        <th>班级排名</th>
+                        <th>年级排名</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>78</td>
+                        <td>78</td>
+                        <td>78</td>
+                        <td>78</td>
+                        <td>78</td>
+                        <td>78</td>
+                        <td>78</td>
+                        <td>78</td>
+                        <td>78</td>
+                        <td>300</td>
+                        <td>2</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>78</td>
+                        <td>78</td>
+                        <td>78</td>
+                        <td>78</td>
+                        <td>78</td>
+                        <td>78</td>
+                        <td>78</td>
+                        <td>78</td>
+                        <td>78</td>
+                        <td>300</td>
+                        <td>2</td>
+                        <td>5</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--各科的成绩-->
+        <div class="divBorder">
+            <div style="border: solid">
+                <div class="divTitle">
+                    <li class="glyphicon glyphicon-th-large icon" id="allCourse"></li>
+                </div>
+                <div id="" class="menu">
+                    <li id="chineseEchart" class="menuLI">语文</li>
+                    <li id="mathEchart" class="menuLI">数学</li>
+                    <li id="englishEchart" class="menuLI">英语</li>
+                </div>
+            </div>
+            <div  id="chinese" style="height: 300px" >
+            </div>
+            <div  id="math" style="height: 300px" >
+            </div>
+            <div  id="english" style="height: 300px" >
+            </div>
+        </div>
+        <!--语数外占比-->
+        <div class="divBorder">
+            <div style="border: solid">
+                <div class="divTitle">
+                    <li></li>
+                </div>
+            </div>
+            <div  id="ysw" style="height: 300px" >
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footPart">
+
+    </div>
+</body>
+
+    <script src="../static/js/echarts.js"></script>
+    <script src="../static/js/jQuery/jQuery.js"></script>
+    <script src="../static/js/jQuery/jquery-3.3.1.min.js"></script>
+    <script src="../static/js/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="../static/js/index.js"></script>
+</html>
