@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.school.school.mapper.StudentMapper" >
+  <resultMap id="BaseResultMap" type="com.school.school.domain.Student" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="stuNo" property="stuno" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="CHAR" />
+    <result column="birth" property="birth" jdbcType="VARCHAR" />
+    <result column="classNo" property="classno" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, stuNo, name, sex, birth, classNo
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from student
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from student
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.school.school.domain.Student" >
+    insert into student (id, stuNo, name,
+      sex, birth, classNo)
+    values (#{id,jdbcType=VARCHAR}, #{stuno,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
+      #{sex,jdbcType=CHAR}, #{birth,jdbcType=VARCHAR}, #{classno,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.school.school.domain.Student" >
+    insert into student
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="stuno != null" >
+        stuNo,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="birth != null" >
+        birth,
+      </if>
+      <if test="classno != null" >
+        classNo,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="stuno != null" >
+        #{stuno,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=CHAR},
+      </if>
+      <if test="birth != null" >
+        #{birth,jdbcType=VARCHAR},
+      </if>
+      <if test="classno != null" >
+        #{classno,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.school.school.domain.Student" >
+    update student
+    <set >
+      <if test="stuno != null" >
+        stuNo = #{stuno,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=CHAR},
+      </if>
+      <if test="birth != null" >
+        birth = #{birth,jdbcType=VARCHAR},
+      </if>
+      <if test="classno != null" >
+        classNo = #{classno,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.school.school.domain.Student" >
+    update student
+    set stuNo = #{stuno,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=CHAR},
+      birth = #{birth,jdbcType=VARCHAR},
+      classNo = #{classno,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

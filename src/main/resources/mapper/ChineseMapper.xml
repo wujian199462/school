@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.school.school.mapper.ChineseMapper" >
+  <resultMap id="BaseResultMap" type="com.school.school.domain.Chinese" >
+    <result column="testNo" property="testno" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.school.school.domain.Chinese" extends="BaseResultMap" >
+    <result column="stuNo" property="stuno" jdbcType="VARBINARY" />
+    <result column="socre" property="socre" jdbcType="VARBINARY" />
+  </resultMap>
+  <sql id="Blob_Column_List" >
+    stuNo, socre
+  </sql>
+  <insert id="insert" parameterType="com.school.school.domain.Chinese" >
+    insert into chinese (testNo, stuNo, socre
+      )
+    values (#{testno,jdbcType=VARCHAR}, #{stuno,jdbcType=VARBINARY}, #{socre,jdbcType=VARBINARY}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.school.school.domain.Chinese" >
+    insert into chinese
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="testno != null" >
+        testNo,
+      </if>
+      <if test="stuno != null" >
+        stuNo,
+      </if>
+      <if test="socre != null" >
+        socre,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="testno != null" >
+        #{testno,jdbcType=VARCHAR},
+      </if>
+      <if test="stuno != null" >
+        #{stuno,jdbcType=VARBINARY},
+      </if>
+      <if test="socre != null" >
+        #{socre,jdbcType=VARBINARY},
+      </if>
+    </trim>
+  </insert>
+</mapper>
