@@ -67,6 +67,7 @@ td{
 .grid th{
     width: 45px;
     height: 20px;
+    text-align: center;
 }
 
 th{
@@ -93,4 +94,38 @@ tr {
     width: 80%;
     left: 20%;
     overflow: auto;
+}
+
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}
+
+.card{
+    width: 100px;
+    border: solid;
+    height: 100px;
+    margin: 10px auto;
+}
+.cardTitle{
+    background-color: #1E90FF;
+    font-size: 20px;
+    text-align: center;
+}
+.cardSocre{
+    float: left;
+    width: 60%;
+    height: 70px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 25px;
+}
+.cardTrend{
+    width: 40%;
+    float: right;
+    height: 70px;
+    line-height: 60px;
+    text-align: center
 }

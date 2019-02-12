@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../static/js/bootstrap-3.3.7-dist/css/bootstrap.css">
     <link rel="stylesheet" href="../static/js/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
     <link rel="stylesheet" href="../static/css/index.css">
+
 </head>
 <body>
     <div class="title" >
@@ -18,9 +19,104 @@
         </div>
     </div>
 
-    <div class="bodyPart">
+
+    <!-- 展示通知页面-->
+    <div id="messageView" class="bodyPart" style="display: none">
+        <div>
+            通知页面待开发。。。
+        </div>
+    </div>
+   <!-- 展示成绩的页面-->
+    <div id="scoreView" class="bodyPart">
         <!--tableAll-->
-        <div><h1>Jerry的课程成绩</h1></div>
+        <div><h1>朱鹏的课程成绩</h1></div>
+
+
+        <div class="divBorder">
+            <div class="row">
+                <div class="col-xs-4"> <div class="card">
+                    <div class="cardTitle">
+                        语文
+                    </div>
+                    <div>
+                        <div id="cardChinese" class="cardSocre">0</div>
+                        <div class="cardTrend"><li class="glyphicon glyphicon-arrow-down red"></li></div>
+                    </div>
+                </div></div>
+                <div class="col-xs-4"> <div class="card">
+                    <div class="cardTitle">
+                        数学
+                    </div>
+                    <div>
+                        <div id="cardMath" class="cardSocre">0</div>
+                        <div class="cardTrend"><li class="glyphicon glyphicon-arrow-up green"></li></div>
+                    </div>
+                </div></div>
+                <div class="col-xs-4"> <div class="card">
+                    <div class="cardTitle">
+                        英语
+                    </div>
+                    <div>
+                        <div id="cardEnglish" class="cardSocre">0</div>
+                        <div class="cardTrend"><li class="glyphicon glyphicon-arrow-up green"></li></div>
+                    </div>
+                </div></div>
+                <div class="col-xs-4"> <div class="card">
+                    <div class="cardTitle">
+                        物理
+                    </div>
+                    <div>
+                        <div  id="cardPhysical" class="cardSocre">0</div>
+                        <div class="cardTrend"><li class="glyphicon glyphicon-arrow-up green"></li></div>
+                    </div>
+                </div></div>
+                <div class="col-xs-4"> <div class="card">
+                    <div class="cardTitle">
+                        化学
+                    </div>
+                    <div>
+                        <div  id="cardChemical"class="cardSocre">0</div>
+                        <div class="cardTrend"><li class="glyphicon glyphicon-arrow-up green"></li></div>
+                    </div>
+                </div></div>
+                <div class="col-xs-4"> <div class="card">
+                    <div class="cardTitle">
+                        生物
+                    </div>
+                    <div>
+                        <div id="cardBiological" class="cardSocre">0</div>
+                        <div class="cardTrend"><li class="glyphicon glyphicon-arrow-up green"></li></div>
+                    </div>
+                </div></div>
+                <div class="col-xs-4"> <div class="card">
+                    <div class="cardTitle">
+                        地理
+                    </div>
+                    <div>
+                        <div id="cardGeographic" class="cardSocre">0</div>
+                        <div class="cardTrend"><li class="glyphicon glyphicon-arrow-up green"></li></div>
+                    </div>
+                </div></div>
+                <div class="col-xs-4"> <div class="card">
+                    <div class="cardTitle">
+                        政治
+                    </div>
+                    <div>
+                        <div id="cardPolitical"class="cardSocre">0</div>
+                        <div class="cardTrend"><li class="glyphicon glyphicon-arrow-up green"></li></div>
+                    </div>
+                </div></div>
+                <div class="col-xs-4"> <div class="card">
+                    <div class="cardTitle">
+                        历史
+                    </div>
+                    <div>
+                        <div id="cardHistory"class="cardSocre">0</div>
+                        <div class="cardTrend"><li class="glyphicon glyphicon-arrow-up green"></li></div>
+                    </div>
+                </div></div>
+            </div>
+        </div>
 
         <div class="divBorder" >
             <div  class="tableLeft">
@@ -31,13 +127,8 @@
                             <th>名称</th>
                         </tr>
                     </thead>
-                  <tbody>
-                      <tr>
-                          <td>第一次模拟考</td>
-                      </tr>
-                      <tr>
-                          <td>第二次模拟考</td>
-                      </tr>
+                  <tbody id="testName">
+
                   </tbody>
                 </table>
             </div>
@@ -60,35 +151,8 @@
                         <th>年级排名</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr>
-                        <td>78</td>
-                        <td>78</td>
-                        <td>78</td>
-                        <td>78</td>
-                        <td>78</td>
-                        <td>78</td>
-                        <td>78</td>
-                        <td>78</td>
-                        <td>78</td>
-                        <td>300</td>
-                        <td>2</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td>78</td>
-                        <td>78</td>
-                        <td>78</td>
-                        <td>78</td>
-                        <td>78</td>
-                        <td>78</td>
-                        <td>78</td>
-                        <td>78</td>
-                        <td>78</td>
-                        <td>300</td>
-                        <td>2</td>
-                        <td>5</td>
-                    </tr>
+                    <tbody id="testScore">
+
                     </tbody>
                 </table>
             </div>
@@ -125,9 +189,40 @@
         </div>
 
     </div>
+   <!-- 展示我的页面-->
+    <div id="mineView" class="bodyPart" style="display: none">
+        <div>
+            我的页面待开发。。。
+        </div>
+    </div>
 
     <div class="footPart">
-
+        <div class="row">
+            <div id="messageButton"  class="col-xs-4" style="text-align: center;font-size: 15px;">
+                <div style="font-size: 25px">
+                    <li class="glyphicon glyphicon-envelope"></li>
+                </div>
+                <div style="font-size: 10px;">
+                    通知
+                </div>
+            </div>
+            <div  id="scoreButton" class="col-xs-4" style="    text-align: center;font-size: 15px;">
+                <div style="font-size: 25px">
+                    <li class="glyphicon glyphicon-signal"></li>
+                </div>
+                <div style="font-size: 10px;">
+                    成绩
+                </div>
+            </div>
+            <div   id="mineButton" class="col-xs-4" style="    text-align: center;font-size: 15px;">
+                <div style="font-size: 25px">
+                    <li class="glyphicon glyphicon-user"></li>
+                </div>
+                <div style="font-size: 10px;">
+                    我的
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
@@ -136,4 +231,5 @@
     <script src="../static/js/jQuery/jquery-3.3.1.min.js"></script>
     <script src="../static/js/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script src="../static/js/index.js"></script>
+    <script src="../static/js/box.js"></script>
 </html>

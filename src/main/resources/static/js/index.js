@@ -3,9 +3,68 @@ inti();
 
 /*初始化*/
 function inti() {
+    getAllScore();
+    tableScore();
     chinese();
     ysw();
 }
+
+/*卡片分数的分*/
+function getAllScore(){
+    $.ajax({
+        url:"score/getAllScoreByStuNo",
+        dataType:"json",
+        data:{"stuNo":"1"},
+        success:function (data) {
+            $("#cardChinese").empty();
+            $("#cardMath").empty();
+            $("#cardEnglish").empty();
+            $("#cardPhysical").empty();
+            $("#cardChemical").empty();
+            $("#cardBiological").empty();
+            $("#cardGeographic").empty();
+            $("#cardPolitical").empty();
+            $("#cardHistory").empty();
+
+            $("#cardChinese").append(data.chinese);
+            $("#cardMath").append(data.math);
+            $("#cardEnglish").append(data.english);
+            $("#cardPhysical").append(data.physical);
+            $("#cardChemical").append(data.chemical);
+            $("#cardBiological").append(data.biological);
+            $("#cardGeographic").append(data.geographic);
+            $("#cardPolitical").append(data.political);
+            $("#cardHistory").append(data.history);
+        },
+        error:function (data) {
+            alert("error");
+        }
+    })
+}
+
+/*表格分数*/
+function tableScore() {
+    $.ajax({
+        url:"score/getAllScore",
+        data:{"stuNo":"1"},
+        dataType:"json",
+        success:function (data) {
+            var testname = "";
+            var testscore = "";
+            $.each(data,function (index,item) {
+                testname+="<tr><td>"+item.testName+"</td></tr>";
+                testscore+="<tr><td>"+item.chinese+"</td><td>"+item.math+"</td><td>"+item.english+"</td><td>"+item.physical+"</td><td>"+item.chemical+"</td><td>"+item.biological+"</td><td>"+item.geographic+"</td><td>"+item.political+"</td><td>"+item.history+"</td></tr>";
+            })
+            $("#testName").empty();
+            $("#testScore").empty();
+            $("#testName").append(testname);
+            $("#testScore").append(testscore);
+        }
+    });
+
+}
+
+
 function chinese() {
 
     $("#math").css("display","none");
@@ -146,7 +205,6 @@ function english() {
     };
     myChart.setOption(option);
 }
-
 function ysw() {
     var myChart = echarts.init(document.getElementById('ysw'));
     var option = {
@@ -187,6 +245,10 @@ function ysw() {
     };
     myChart.setOption(option);
 }
+
+
+
+
 
 $("#allCourse").click(function () {
     var flag = $(".menu").css("display");
