@@ -8,14 +8,18 @@
     <link rel="stylesheet" href="../static/js/bootstrap-3.3.7-dist/css/bootstrap.css">
     <link rel="stylesheet" href="../static/js/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
     <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/solve.css">
+
 
 </head>
 <body>
     <div class="title" >
         <div class="row">
-            <div class="col-xs-4">1</div>
-            <div class="col-xs-4">2</div>
-            <div class="col-xs-4">3</div>
+            <div class="col-xs-4"></div>
+            <div class="col-xs-5">
+                    <input id="searchText" type="text" style="margin-top: 10px;" class="form-control">
+            </div>
+            <div class="col-xs-3" style="text-align: center;line-height: 65px;font-size: 20px"><li id="search" class="glyphicon glyphicon-search"></li></div>
         </div>
     </div>
 
@@ -26,6 +30,20 @@
             通知页面待开发。。。
         </div>
     </div>
+    <!-- 展示名师解题页面-->
+    <div id="solveView" class="bodyPart" style="display: none">
+        <div >
+            <li id="takePhoto" class="glyphicon glyphicon-camera"></li>
+            <button id="snap" onclick="takePhoto()">拍照</button>
+        </div>
+        <div>
+            <video id="video" style="display: none;width: 200px;height: 200px" autoplay="autoplay"></video>
+            <canvas id="canvas" style="display: none" width="500px" height="250px"></canvas>
+        </div>
+        <div id="teacherList" style="background-color:#DCDCDC">
+
+        </div>
+    </div>
    <!-- 展示成绩的页面-->
     <div id="scoreView" class="bodyPart">
         <!--tableAll-->
@@ -34,15 +52,17 @@
 
         <div class="divBorder">
             <div class="row">
-                <div class="col-xs-4"> <div class="card">
-                    <div class="cardTitle">
-                        语文
-                    </div>
-                    <div>
-                        <div id="cardChinese" class="cardSocre">0</div>
-                        <div class="cardTrend"><li class="glyphicon glyphicon-arrow-down red"></li></div>
-                    </div>
-                </div></div>
+                <div class="col-xs-4">
+                    <div class="card">
+                        <div class="cardTitle">
+                            语文
+                        </div>
+                        <div>
+                            <div id="cardChinese" class="cardSocre">0</div>
+                            <div class="cardTrend"><li class="glyphicon glyphicon-arrow-down red"></li></div>
+                        </div>
+                     </div>
+                </div>
                 <div class="col-xs-4"> <div class="card">
                     <div class="cardTitle">
                         数学
@@ -198,7 +218,7 @@
 
     <div class="footPart">
         <div class="row">
-            <div id="messageButton"  class="col-xs-4" style="text-align: center;font-size: 15px;">
+            <div id="messageButton"  class="col-xs-3" style="text-align: center;font-size: 15px;">
                 <div style="font-size: 25px">
                     <li class="glyphicon glyphicon-envelope"></li>
                 </div>
@@ -206,7 +226,15 @@
                     通知
                 </div>
             </div>
-            <div  id="scoreButton" class="col-xs-4" style="    text-align: center;font-size: 15px;">
+            <div  id="solveButton" class="col-xs-3" style="    text-align: center;font-size: 15px;">
+                <div style="font-size: 25px">
+                    <li class="glyphicon glyphicon-check"></li>
+                </div>
+                <div style="font-size: 10px;">
+                    名师解题
+                </div>
+            </div>
+            <div  id="scoreButton" class="col-xs-3" style="    text-align: center;font-size: 15px;">
                 <div style="font-size: 25px">
                     <li class="glyphicon glyphicon-signal"></li>
                 </div>
@@ -214,7 +242,7 @@
                     成绩
                 </div>
             </div>
-            <div   id="mineButton" class="col-xs-4" style="    text-align: center;font-size: 15px;">
+            <div   id="mineButton" class="col-xs-3" style="    text-align: center;font-size: 15px;">
                 <div style="font-size: 25px">
                     <li class="glyphicon glyphicon-user"></li>
                 </div>
@@ -232,4 +260,5 @@
     <script src="../static/js/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script src="../static/js/index.js"></script>
     <script src="../static/js/box.js"></script>
+    <script src="../static/js/solve.js"></script>
 </html>

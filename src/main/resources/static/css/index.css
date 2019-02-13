@@ -4,6 +4,7 @@
     position: fixed;
     border: solid;
     font-size: 45px;
+    background-color: #48D1CC;
 }
 .bodyPart{
     overflow: scroll;
@@ -110,7 +111,7 @@ tr {
     margin: 10px auto;
 }
 .cardTitle{
-    background-color: #1E90FF;
+    background-color: #48D1CC;
     font-size: 20px;
     text-align: center;
 }
@@ -129,3 +130,4 @@ tr {
     line-height: 60px;
     text-align: center
 }
+
