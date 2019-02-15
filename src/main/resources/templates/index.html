@@ -33,8 +33,25 @@
     <!-- 展示名师解题页面-->
     <div id="solveView" class="bodyPart" style="display: none">
         <div >
-            <li id="takePhoto" class="glyphicon glyphicon-camera"></li>
-            <button id="snap" onclick="takePhoto()">拍照</button>
+            <div id="toPhotoArea" style="border: solid 0.5px;width: 100%;height: 50px;font-size: 25px;">
+                <li id="toPhoto" class="glyphicon glyphicon-camera" style="float: right"></li>
+            </div>
+            <div id="photoArea" style="border: solid 1px;width: 100%;height: 200px;display: none">
+                <span> 选择你的题目。。。</span>
+                <div style="border: solid 1px;width: 100px;height: 100px;margin-top: 75px;">
+<!--
+                    <li id="takePhoto" class="glyphicon glyphicon-camera" style="float: right;font-size: 42px;position: relative;top: 20px;left: -25px;"></li>
+-->
+                    <li id="choosePhoto" class="glyphicon glyphicon-camera" style="float: right;font-size: 42px;position: relative;top: 20px;left: -25px;"></li>
+                </div>
+                <button id="snap" onclick="takePhoto()" >拍照</button>
+            </div>
+        </div>
+        <!--遮罩层-->
+        <div id="corver" style="display: none;width: 99%;position: fixed;background: #000000;z-index: 1;top: 10%;bottom: 10%;opacity: 0.5;"></div>
+        <div id="chooseWay" style="display: none;width: 99%;height: 100px;position: fixed;background-color: #fff;z-index: 2;bottom: 10%;">
+            <div id="chooseFromAlbum" style="width: 100%;height: 50%;position: relative;line-height: 40px;border-bottom: solid 1px #DCDCDC;">在相册选择</div>
+            <div id="takePhoto" style="width: 100%;height: 50%;position: relative;line-height: 40px;border-bottom: solid 1px #DCDCDC;">拍照</div>
         </div>
         <div>
             <video id="video" style="display: none;width: 200px;height: 200px" autoplay="autoplay"></video>

@@ -1,6 +1,8 @@
 
 $("#takePhoto").click(function () {
     $("#video").css("display","block");
+    $("#corver").css("display","none");
+    $("#chooseWay").css("display","none");
     let constraints = {
         video: {width: 200, height: 200},
         audio: true
@@ -67,3 +69,21 @@ function getAllTeacher() {
         }
     })
 }
+
+
+
+$("#toPhoto").click(function () {
+    $("#photoArea").css("display","block");
+    $("#toPhotoArea").css("display","none");
+});
+
+$("#choosePhoto").click(function () {
+   /* $("#chooseWay").css("display","block");*/
+    $("#corver").css("display","block");
+    $("#chooseWay").slideToggle(300);
+});
+
+$("#chooseFromAlbum").click(function () {
+    $("#corver").css("display","none");
+    $("#chooseWay").css("display","none");
+});
